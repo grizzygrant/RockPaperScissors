@@ -33,6 +33,11 @@
             return computerChoice;
         }
 
+        function displayRoundInfo() {
+            console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
+            console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
+        }
+
         function playRound(playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
                 console.log("You have tied. Play again!");
@@ -64,7 +69,7 @@
             } else {
                 console.log('What happened? ERROR!');
                 currentRound += 1;
-            }      
+            }  
         }
 
         function playGame() {
@@ -73,38 +78,32 @@
             playerSelection = playerSelection.toLowerCase();
             computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
-            console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
-            console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
             //Round 2
             playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
             playerSelection = playerSelection.toLowerCase();
             computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
-            console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
-            console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
+            
             //Round 3
             playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
             playerSelection = playerSelection.toLowerCase();
             computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
-            console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
-            console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
+            
             //Round 4
             playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
             playerSelection = playerSelection.toLowerCase();
             computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
-            console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
-            console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
+            
             //Round 5
             playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
             playerSelection = playerSelection.toLowerCase();
             computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
-            console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
-            console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
-            //Declare winner
             
+            //Declare winner
+
         }
         
         playGame(); 
