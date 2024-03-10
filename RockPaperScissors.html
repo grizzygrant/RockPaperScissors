@@ -12,6 +12,7 @@
         let currentRound = 0;
         let playerSelection = "";
         let computerSelection = "";
+        let winner = "";
         //Get 'Computer Choice'
         //Return random number 0-2
         function getComputerChoice() {
@@ -70,8 +71,22 @@
                 console.log('What happened? ERROR!');
                 currentRound += 1;
             }  
+            displayRoundInfo();
         }
-
+        
+        function declareWinner() {
+            if (playerScore === computerScore) {
+                winner = "No one";
+                console.log(`${winner} is the winner. You have tied.`);
+            } else if (playerScore > computerScore) {
+                winner = "Player";
+                console.log("You are the winner! Suck it stupid computers.");
+            } else if (computerScore > playerScore) {
+                winner = "Computer";
+                console.log("The computer wins. They'll probably take our jobs soon.");
+            }
+        }
+        
         function playGame() {
             //Round 1
             playerSelection = prompt("Welcome to ROCK PAPER SCISSORS. Enter your move: Rock, Paper, or Scissors.");
@@ -101,9 +116,8 @@
             playerSelection = playerSelection.toLowerCase();
             computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
-            
             //Declare winner
-
+            declareWinner();
         }
         
         playGame(); 
