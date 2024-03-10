@@ -10,7 +10,8 @@
         let playerScore = 0;
         let computerScore = 0;
         let currentRound = 0;
-        let playerSelection = ""
+        let playerSelection = "";
+        let computerSelection = "";
         //Get 'Computer Choice'
         //Return random number 0-2
         function getComputerChoice() {
@@ -31,9 +32,7 @@
             }
             return computerChoice;
         }
-        
-        //Assign to Rock/Paper/Scissors
-        //Create function to play single round game
+
         function playRound(playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
                 console.log("You have tied. Play again!");
@@ -67,21 +66,47 @@
                 currentRound += 1;
             }      
         }
-        //Create playGame function to create a 5 round game
+
         function playGame() {
             //Round 1
             playerSelection = prompt("Welcome to ROCK PAPER SCISSORS. Enter your move: Rock, Paper, or Scissors.");
             playerSelection = playerSelection.toLowerCase();
-            playRound
+            computerSelection = getComputerChoice();
+            playRound(playerSelection, computerSelection);
+            console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
+            console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
             //Round 2
             playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
             playerSelection = playerSelection.toLowerCase();
+            computerSelection = getComputerChoice();
+            playRound(playerSelection, computerSelection);
             console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
             console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
-            playRound()
+            //Round 3
+            playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = getComputerChoice();
+            playRound(playerSelection, computerSelection);
+            console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
+            console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
+            //Round 4
+            playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = getComputerChoice();
+            playRound(playerSelection, computerSelection);
+            console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
+            console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
+            //Round 5
+            playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = getComputerChoice();
+            playRound(playerSelection, computerSelection);
+            console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
+            console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
+            //Declare winner
+            
         }
-        //Play Game
-        let computerSelection = getComputerChoice();
+        
         playGame(); 
     </script>
 </body>
