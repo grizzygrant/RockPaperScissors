@@ -19,7 +19,7 @@
         //Change console.log's to DOM methods
         //Display running score
         //declareWinner() after 5 points and append to HTML
-        //for bonus, allow a selection of rounds
+        //For bonus, allow a selection for # of rounds
         let playerScore = 0;
         let computerScore = 0;
         let currentRound = 0;
@@ -46,12 +46,13 @@
             }
             return computerChoice;
         }
-
+        //Display choices, score, and round
         function displayRoundInfo() {
             console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
             console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
         }
-
+        // Play round of RPS and determine round winner
+        //Increments score +1 --- Remove 'currentRound += 1' from if statement scope to function scope
         function playRound(playerSelection, computerSelection) {
             if (playerSelection === computerSelection) {
                 console.log("You have tied. Play again!");
@@ -84,9 +85,10 @@
                 console.log('What happened? ERROR!');
                 currentRound += 1;
             }  
+            //Call this separately from playRound() ??
             displayRoundInfo();
         }
-        
+        //Declare winner
         function declareWinner() {
             if (playerScore === computerScore) {
                 winner = "No one";
@@ -99,7 +101,7 @@
                 console.log("The computer wins. They'll probably take our jobs soon.");
             }
         }
-        
+        //Play Game - PlayerSelection > Computer Selection > playRound() 
         function playGame() {
             //Round 1
             playerSelection = prompt("Welcome to ROCK PAPER SCISSORS. Enter your move: Rock, Paper, or Scissors.");
@@ -111,19 +113,16 @@
             playerSelection = playerSelection.toLowerCase();
             computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
-            
             //Round 3
             playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
             playerSelection = playerSelection.toLowerCase();
             computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
-            
             //Round 4
             playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
             playerSelection = playerSelection.toLowerCase();
             computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
-            
             //Round 5
             playerSelection = prompt("Next round. Enter your move: Rock Paper or Scissors.");
             playerSelection = playerSelection.toLowerCase();
