@@ -1,0 +1,5 @@
+button {
+    padding: .75em 1.25em;
+    border: 1px dashed black;
+    border-radius: 2em;
+}
