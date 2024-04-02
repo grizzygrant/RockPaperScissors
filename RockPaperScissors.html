@@ -6,7 +6,19 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <div>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+    <div id="output">
+    </div>
     <script>
+        //Add event listener to buttons to call playRound() with correct player selection
+        //Change console.log's to DOM methods
+        //Display running score
+        //declareWinner() after 5 points and append to HTML
+        //for bonus, allow a selection of rounds
         let playerScore = 0;
         let computerScore = 0;
         let currentRound = 0;
@@ -120,7 +132,7 @@
             declareWinner();
         }
         
-        playGame(); 
+        
     </script>
 </body>
 </html>
