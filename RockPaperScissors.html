@@ -7,12 +7,17 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <div id="buttons">
+        <button class="button" id="rock">Rock</button>
+        <button class="button" id="paper">Paper</button>
+        <button class="button" id="scissors">Scissors</button>
     </div>
-    <div id="output">
+    <!--Hide until playRound()-->
+    <div id="output" class="hidden">
+        <!--Add Round Indicator, Score, and Each player selection-->
+        <p id="selections"></p>
+        <p id="score"></p>
+        <p id="round"></p>
     </div>
     <script>
         //Add event listener to buttons to call playRound() with correct player selection
@@ -20,6 +25,8 @@
         //Display running score
         //declareWinner() after 5 points and append to HTML
         //For bonus, allow a selection for # of rounds
+
+        //Declare Variables
         let playerScore = 0;
         let computerScore = 0;
         let currentRound = 0;
@@ -47,7 +54,11 @@
             return computerChoice;
         }
         //Display choices, score, and round
+        //Replace with textContent changes
         function displayRoundInfo() {
+            // p#selections `The computer chose: ${computerSelection}. You chose: ${playerSelection}.`
+            // p#score `Computer: ${computerScore}  Player: ${playerScore}`
+            // p#round `Round: ${currentRound}`
             console.log("Computer: " + computerSelection + "; Your choice: " + playerSelection);
             console.log("Computer score: " + computerScore + "; Player score: " + playerScore + "; Current round: " + currentRound);
         }
@@ -131,8 +142,6 @@
             //Declare winner
             declareWinner();
         }
-        
-        
     </script>
 </body>
 </html>
