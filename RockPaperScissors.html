@@ -38,6 +38,10 @@
         const selectionsP = document.querySelector('#selections');
         const scoreP = document.querySelector('#score');
         const roundP = document.querySelector('#round');
+        const buttons = document.querySelector('#buttons');
+        const rockButton = document.querySelector('#rock');
+        const paperButton = document.querySelector('#paper');
+        const scissorsButton = document.querySelector('#scissors');
         //Get 'Computer Choice'
         //Return random number 0-2
         function getComputerChoice() {
@@ -140,6 +144,28 @@
             //Declare winner
             declareWinner();
         }
+        //Add event listeners
+        rock.addEventListener('click', () => {
+            if (currentRound < 5) {
+                playRound('rock', getComputerChoice());
+            } else {
+                declareWinner();
+            }
+        });
+        paper.addEventListener('click', () => {
+            if (currentRound < 5) {
+                playRound('paper', getComputerChoice());
+            } else {
+                declareWinner();
+            }
+        });
+        scissors.addEventListener('click', () => {
+            if (currentRound < 5) {
+                playRound('scissors', getComputerChoice());
+            } else {
+                declareWinner();
+            }
+        });
     </script>
 </body>
 </html>
